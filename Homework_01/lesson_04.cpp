@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 // 01 ////////////////////////////////////
 
@@ -68,15 +69,29 @@ int ways(int** arr, int x, int y)
 	{
 		return 0;
 	}
-	else if (x == 0 || y == 0)
+	else if (arr[x][y] == 1)
 	{
-		return 1;
+		return 0;
 	}
-	else if (x > 0 && y > 0)
-	{
-		if (arr[x][y] == 1)
+	else if (x == 0) {
+		if (ways(arr, x, y - 1) == 0 && y != 1)
 		{
 			return 0;
+		}
+		else
+		{
+			return 1;
+		}
+	}
+	else if (y == 0)
+	{
+		if (ways(arr, x - 1, y) == 0 && x != 1)
+		{
+			return 0;
+		}
+		else
+		{
+			return 1;
 		}
 	}
 	return ways(arr, x - 1, y) + ways(arr, x, y - 1);
@@ -127,27 +142,27 @@ int main()
 			arr[i][j] = 0;
 		}
 	}
-	arr[1][2] = 1;		// задаем препятствие [Y][X]
-    arr[2][1] = 1;		// задаем препятствие [Y][X]
+	arr[1][0] = 1;		// задаем препятствие [Y][X]
+	arr[0][2] = 1;		// задаем препятствие [Y][X]
 
 	std::cout << "Количество возможных путей - " << ways(arr, y, x) << std::endl;
 	
-	int result = 0;
+    for (int i = 0; i <= y; i++)
+	{
+		for (int j = 0; j <= x; j++)
+		{
+			std::cout << std::setw(4) << arr[i][j];
+		}
+		std::cout << std::endl;
+	}
+
+	std::cout << std::endl;
+    
 	for (int i = 0; i<=y; i++)
 	{
 		for (int j = 0; j <= x; j++)
 		{
-			result = ways(arr, i, j);
-			std::cout << result;
-			if (result < 10)
-			{
-				std::cout << "  ";
-			}
-			else if (result > 9 && result < 100)
-			{
-				std::cout << " ";
-			}
-			else {}
+			std::cout << std::setw(4) << ways(arr, i, j);
 		}
 		std::cout << std::endl;
 	}
