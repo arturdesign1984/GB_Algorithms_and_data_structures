@@ -205,9 +205,30 @@ int main()
 		}
 	}
 	arr[1][2] = 1;		// задаем препятствие  [Y][X]
+    arr[1][2] = 1;		// задаем препятствие  [Y][X]
 
 	std::cout << "Количество возможных путей - " << ways(arr, y, x) << std::endl;
-
+	
+	int result = 0;
+	for (int i = 0; i<=y; i++)
+	{
+		for (int j = 0; j <= x; j++)
+		{
+			result = ways(arr, i, j);
+			std::cout << result;
+			if (result < 10)
+			{
+				std::cout << "  ";
+			}
+			else if (result > 9 && result < 100)
+			{
+				std::cout << " ";
+			}
+			else {}
+		}
+		std::cout << std::endl;
+	}
+    
 	delete[] arr[0];
 	delete[] arr;
 	arr = nullptr;
