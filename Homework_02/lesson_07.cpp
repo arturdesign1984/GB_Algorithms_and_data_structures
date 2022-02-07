@@ -54,9 +54,32 @@ void quickS(int* arr, int first, int last)
 	{
 		int i = first;
 		int j = last;
+        int temp = 0;
 
-		int x = (arr[first] + arr[last] + arr[(first + last) / 2]) / 3;
+        if (arr[first] > arr[(first + last) / 2])
+        {
+            if (arr[first] < arr[last])
+            {
+                temp = arr[first];
+                arr[first] = arr[(first + last) / 2];
+                arr[(first + last) / 2] = temp;
+            }
+            else
+            {
+                temp = arr[last];
+                arr[last] = arr[(first + last) / 2];
+                arr[(first + last) / 2] = temp;
+            }
+        }
+        else if (arr[(first + last) / 2] > arr[last])
+        {
+            temp = arr[last];
+            arr[last] = arr[(first + last) / 2];
+            arr[(first + last) / 2] = temp;
+        }
 
+		int x = arr[(first + last) / 2];
+        
 		do
 		{
 			while (arr[i] < x)
