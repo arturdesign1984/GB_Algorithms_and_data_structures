@@ -20,18 +20,18 @@ int main()
 {
 	//// 01 //////////////////////////////
 
-	const int arrHeight = 3; // ¢Î·Æ‚† ¨†··®¢†
-	const int arrWidth = 3;  // Ë®‡®≠† ¨†··®¢†
+	const int arrHeight = 3; // –≤—ã—Å–æ—Ç–∞ –º–∞—Å—Å–∏–≤–∞
+	const int arrWidth = 3;  // —à–∏—Ä–∏–Ω–∞ –º–∞—Å—Å–∏–≤–∞
 
 	int** arr1 = nullptr;
 	arr1 = createNewArray(arr1, arrHeight, arrWidth);
 	fillArray(arr1, arrHeight, arrWidth);
-	arr1[arrHeight-1][arrWidth-1] = 0; // Â„§Ë®© ·´„Á†© 0 ¢ ™Æ≠Ê• ¨†··®¢†
+	arr1[arrHeight-1][arrWidth-1] = 0; // —Ö—É–¥—à–∏–π —Å–ª—É—á–∞–π 0 –≤ –∫–æ–Ω—Ü–µ –º–∞—Å—Å–∏–≤–∞¬†
 
 	std::cout << " No sort:\n";
 	printArr(arr1, arrHeight, arrWidth);
 	bubbleSortA(arr1, arrHeight, arrWidth);
-	//bubbleSortB(arr1, arrHeight, arrWidth);  //‚Æ´Ï™Æ §´Ô ¨†··®¢Æ¢ · ØÆ·´•§Æ¢†‚•´Ï≠Î¨ ‡†·ØÆ´Æ¶•≠®•¨ †§‡•·Æ¢
+	//bubbleSortB(arr1, arrHeight, arrWidth);  // —Ç–æ–ª—å–∫–æ –¥–ª—è –º–∞—Å—Å–∏–≤–æ–≤ —Å –ø–æ—Å–ª–µ–¥–æ–≤–∞—Ç–µ–ª—å–Ω—ã–º —Ä–∞—Å–ø–æ–ª–æ–∂–µ–Ω–∏–µ–º –∞–¥—Ä–µ—Å–æ–≤
 
 	std::cout << " Result:\n";
 	printArr(arr1, arrHeight, arrWidth);
@@ -40,7 +40,7 @@ int main()
 
 	//// 02  /////////////////////////////
 
-	size_t numbers = 11; // ™Æ´®Á•·‚¢Æ Á®·•´ §´Ô ¢¢Æ§† ØÆ´ÏßÆ¢†‚•´•¨
+	size_t numbers = 11; // –∫–æ–ª–∏—á–µ—Å—Ç–≤–æ —á–∏—Å–µ–ª –¥–ª—è –≤–≤–æ–¥–∞ –ø–æ–ª—å–∑–æ–≤–∞—Ç–µ–ª–µ–º
 
 	float arr2[numbers] = { 0 };
 
@@ -107,9 +107,9 @@ void bubbleSortA(int** mass, size_t h, size_t w)
 	}
 }
 
-void bubbleSortB(int** mass, size_t h, size_t w)  // ™Æ£§† ·§•´†´ ØÆ≠Ô´ Á‚Æ Æ·Æ°Æ£Æ ·¨Î·´† ¢ Ì‚Æ¨ ≠•‚
-{												  // Á®‚†•‚·Ô ™Æ≠•Á≠Æ ´•£Á•, ≠Æ ≠•´ÏßÔ ·Æ‡‚®‡Æ¢†‚Ï
-	size_t x = h * w;							  // ¨†··®¢Î · ‡†ß°‡Æ·†≠≠Î¨® ØÆ ™„Á• ·‚‡Æ™†¨®
+void bubbleSortB(int** mass, size_t h, size_t w)  // –∫–æ–≥–¥–∞ —Å–¥–µ–ª–∞–ª –ø–æ–Ω—è–ª —á—Ç–æ –æ—Å–æ–±–æ–≥–æ —Å–º—ã—Å–ª–∞ –≤ —ç—Ç–æ–º –Ω–µ—Ç
+{						  // —á–∏—Ç–∞–µ—Ç—Å—è –∫–æ–Ω–µ—á–Ω–æ –ª–µ–≥—á–µ, –Ω–æ –Ω–µ–ª—å–∑—è —Å–æ—Ä—Ç–∏—Ä–æ–≤–∞—Ç—å
+	size_t x = h * w;			  // –º–∞—Å—Å–∏–≤—ã —Å —Ä–∞–∑–±—Ä–æ—Å–∞–Ω–Ω—ã–º–∏ –ø–æ –∫—É—á–µ —Å—Ç—Ä–æ–∫–∞–º–∏
 	int temp = 0;
 	for (size_t k = 0; k < (h * w - 1); k++)
 	{
