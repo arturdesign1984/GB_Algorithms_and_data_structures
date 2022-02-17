@@ -41,11 +41,11 @@ int main()
         {
             if (trees[k] == nullptr)
             {
-            trees[k] = treeInsert(trees[k],(rand()%1000));
+            trees[k] = treeInsert(trees[k],rand());
             }
             else
             {
-                treeInsert(trees[k],(rand()%1000));
+                treeInsert(trees[k],rand());
             }
         }
     }
