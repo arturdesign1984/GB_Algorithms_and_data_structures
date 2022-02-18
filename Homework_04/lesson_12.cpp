@@ -163,23 +163,18 @@ int depth(TreeNode* root)
 
 bool isBalanced(TreeNode* root)
 {
-    int depthLeft = 0;
-    int depthRight = 0;
     if (root == nullptr)
     {
-        return  0;
+        return  1;
     }
+    int depthLeft = depth(root->left);
+    int depthRight = depth(root->right);
 
-    depthLeft = depth(root->left);
-    depthRight = depth(root->right);
-
-    if (abs(depthLeft - depthRight) <= 1)
+    if (abs(depthLeft - depthRight) <= 1 && isBalanced(root->left) && isBalanced(root->right))
     {
         return 1;
     }
-    else return 0;
-
-
+    return 0;
 }
 
 // 02 ////////////////////////////////////
