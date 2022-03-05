@@ -49,7 +49,7 @@ void encrypt01(char* str, int shift)
     shift %= 26;
     for (int k = 0; k < strlen(str); k++)
     {
-        if ((static_cast <int> (str[k]) + shift) < 97 || (static_cast <int> (str[k]) + shift) > 122)
+        if ((static_cast <int> (str[k]) + shift) < 97 || (static_cast <int> (str[k]) + shift) > 123)
         {
             continue;
         }
@@ -69,7 +69,7 @@ void decrypt01(char* str, int shift)
     shift %= 26;
     for (int k = 0; k < strlen(str); k++)
     {
-        if ((static_cast <int> (str[k]) + shift) < 97 || (static_cast <int> (str[k]) + shift) > 122)
+        if ((static_cast <int> (str[k]) + shift) < 97 || (static_cast <int> (str[k]) + shift) > 123)
         {
             continue;
         }
